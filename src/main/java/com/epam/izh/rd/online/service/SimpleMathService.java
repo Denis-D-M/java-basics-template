@@ -1,46 +1,30 @@
 package com.epam.izh.rd.online.service;
 
+import java.util.Arrays;
 public class SimpleMathService implements MathService {
 
-    /**
-     * Метод возвращает 0, если value1 = value2.
-     * Метод возвращает -1, если value1 < value2.
-     * Метод возвращает 1, если value1 > value2.
-     *
-     * Например для (-1, -1) метод должен вернуть 0;
-     * Например для (-3, -1) метод должен вернуть -1;
-     * Например для (3, 1) метод должен вернуть 1;
-     */
     @Override
     public int compare(int value1, int value2) {
-        return -2;
+        return Integer.compare(value1, value2);
     }
 
-    /**
-     * Метод возвращает максимальное число из пары.
-     * Например для списка (-1, 2) метод должен вернуть 2
-     */
     @Override
     public int maxFrom(int value1, int value2) {
-        return -1;
+        return Math.max(value1, value2);
     }
 
-    /**
-     * Метод возвращает максимальное число из переданного массива.
-     * Например для списка {-1, -3, 4, 8, 5, 22, -5} метод должен вернуть 22
-     */
     @Override
     public int maxFrom(int[] values) {
-        return -1;
+        Arrays.sort(values);
+        return values[values.length - 1];
     }
-
     /**
      * Метод возвращает сумму чисел массива.
      * Например для списка {-1, -3, 4, 8, 5, 22, -5} метод должен вернуть 30
      */
     @Override
     public int sum(int[] values) {
-        return -1;
+        return Arrays.stream(values).sum();
     }
 
     /**
