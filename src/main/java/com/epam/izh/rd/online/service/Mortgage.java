@@ -1,5 +1,8 @@
 package com.epam.izh.rd.online.service;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -11,11 +14,13 @@ public class Mortgage {
     /**
      * Продукт (например Семейная ипотека)
      */
+    @Getter@Setter
     private Product product;
 
     /**
      * Размер заемных средств
      */
+    @Getter
     private BigDecimal amount;
 
     /**
@@ -42,27 +47,7 @@ public class Mortgage {
     /**
      * Объект недвижимости
      */
+    @Getter@Setter
     private Realty realty;
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    //.... геттеры и сеттеры для полей
-
-    public Realty getRealty() {
-        return realty;
-    }
-
-    public void setRealty(Realty realty) {
-        this.realty = realty;
-    }
 }
